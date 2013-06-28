@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <body>
+
+        <ui:composition template="./plantillaA.xhtml">
+
+            <ui:define name="top">
+                <h2>Bienvenido a mi sitio</h2>
+            </ui:define>
+
+            <ui:define name="left">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li>
+                        <h:outputLink value="http://www.google.com">
+                            <h:outputText value="Google"/>
+                        </h:outputLink>
+                    </li>
+                    <li>
+                        <h:outputLink value="http://www.yahoo.com">
+                            <h:outputText value="Yahoo"/>
+                        </h:outputLink>
+                    </li>
+                    <li>
+                        <h:outputLink value="http://www.outlook.com">
+                            <h:outputText value="Outlook"/>
+                        </h:outputLink>
+                    </li>
+                    <li>
+                        <h:outputLink value="http://www.facebook.com">
+                            <h:outputText value="Facebook"/>
+                        </h:outputLink>
+                    </li>
+                </ul>
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form id="formularioRegistro">
+                <h:panelGrid columns="3" columnClasses="alinder, alinizq, alinizq"> 
+                    <h:outputLabel value="Saludo: " for="saludo"/>
+                    <h:selectOneMenu id="saludo" label="Saludo" value="#{registrationBean.saludo}">
+                        <f:selectItem itemLabel="Sr." itemValue="SR"/>
+                        <f:selectItem itemLabel="Srs." itemValue="SRS"/>
+                        <f:selectItem itemLabel="Srta." itemValue="SRTA"/>
+                        <f:selectItem itemLabel="Sra." itemValue="SRA"/>
+                        <f:selectItem itemLabel="Dr." itemValue="DR"/>
+                    </h:selectOneMenu>
+                    <h:message for="saludo"/>
+                    
+                    <h:outputLabel value="Nombre: " for="nombre"/>
+                    <h:inputText id="nombre" label="Nombre" required="true" value="#{registrationBean.nombre}"/>
+                    <h:message for="nombre"/>
+                    
+                    <h:outputLabel value="Apellidos: " for="apellidos"/>
+                    <h:inputText id="apellidos" label="Apellidos" required="true" value="#{registrationBean.apellidos}"/>
+                    <h:message for="apellidos"/>
+                    
+                    <h:outputLabel value="Dirección: " for="direccion"/>
+                    <h:inputText id="direccion" label="Dirección" required="true" value="#{registrationBean.direccion}"/>
+                    <h:message for="direccion"/>
+                    
+                    <h:outputLabel value="Edad: " for="edad"/>
+                    <h:inputText id="edad" label="Edad" required="true" value="#{registrationBean.edad}"/>
+                    <h:message for="edad"/>
+                    
+                    <h:outputLabel value="Email: " for="email"/>
+                    <h:inputText id="email" label="Email" required="true" value="#{registrationBean.email}"><f:validator validatorId="emailValidator"></f:validator></h:inputText>
+                    <h:message for="email"/>
+                    
+                    <h:panelGroup/>
+                    
+                    <h:commandButton id="registrar" value="Registar" action="_confirmacion"/>
+               </h:panelGrid>
+            </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

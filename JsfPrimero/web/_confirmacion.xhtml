@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+    <body>
+
+        <ui:composition template="./plantillaA.xhtml">
+
+            <ui:define name="top">
+                top
+            </ui:define>
+
+            <ui:define name="left">
+                left
+            </ui:define>
+
+            <ui:define name="content">
+                <h:form id="formularioRegistro">
+                <h:panelGrid columns="2" columnClasses="alinder-bold, normal">
+                    
+                    <h:outputText value="Saludo: "/>
+                    <h:outputText value="#{registrationBean.saludo}"/>
+                    <h:outputText value="Nombre: "/>
+                    <h:outputText value="#{registrationBean.nombre}"/>
+                    <h:outputText value="Apellidos: "/>
+                    <h:outputText value="#{registrationBean.apellidos}"/>
+                    <h:outputText value="Dirección: "/>
+                    <h:outputText value="#{registrationBean.direccion}"/>
+                    <h:outputText value="Edad: "/>
+                    <h:outputText value="#{registrationBean.edad}"/>
+                    <h:outputText value="Email: "/>
+                    <h:outputText value="#{registrationBean.email}"/>
+                                      
+               </h:panelGrid>
+            </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
