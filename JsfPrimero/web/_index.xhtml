@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ezcomp="http://java.sun.com/jsf/composite/ezcomp">
 
     <body>
 
@@ -74,6 +75,7 @@
                     
                     <h:panelGroup/>
                     
+                    <ezcomp:direcciones managedBean="#{direccionBean}" dirTipo="Añadir"/>
                     <h:commandButton id="registrar" value="Registar" action="_confirmacion"/>
                </h:panelGrid>
             </h:form>
